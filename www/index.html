@@ -16,10 +16,15 @@
   <script src="cordova.js"></script>
 
   <script src="./lib/jquery/jquery-1.11.1.min.js"></script>
-  <script src="js/Controller.js"></script>
+
+  <script src="js/index.js"></script>
 
   <script>
     var module = angular.module('app', ['onsen']);
+    // app.initialize();
+    ons.ready(function(){
+      app.initialize();
+    });
   </script>
 
   <style>
@@ -138,7 +143,9 @@
         </div>
         <div class="center">Page 1</div>
       </ons-toolbar>
-
+      <ul id="deviceList">
+        <li>BlueTooth List</li>
+      </ul>
       <ons-row style="margin-top: 100px;">
         <ons-col align="center">
           <ons-button modifier="light" ng-click="menu.toggleMenu()">
